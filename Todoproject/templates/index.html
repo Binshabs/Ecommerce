@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% if category %}
+<div class="container-fluid mb-3">
+
+ <h1 class="hed mt-5 mb-2">{{category.name}}</h1>
+ <img class="can rounded-5 " src="{{category.image.url}}" style="margin-left: 600px;" width="40%" height="600" alt="">
+ <h5 class="des mt-4 mb-3 pb-3 pt-3">{{category.desc}}</h5></div>
+{% else %}
+
+<div class="container-fluid mb-3">
+
+  <h1 class="hed mt-5 mb-2">All Products</h1>
+  <img class="can rounded-5 " src="../static/images/canva1.png" style="margin-left: 30px;" width="96%" height="600" alt="">
+  <h5 class="des mt-4 mb-3 pb-3 pt-3">It's a good idea to headline each category and to write succinct explanations for each part of the phone; a potential buyer won't linger too long for the advice. Talk about what you like about the smartphone you're reviewing, how easy it is to use, what features in particular are of worthy note.</h5></div>
+
+{% endif %}
+<div class="container-fluid">
+    <div class="card-group mb-3">
+      {% for i in products %}
+        {% if i.available %}
+        <a href="{% url 'shop:details' i.id %}">
+        <div class="cad border p-3 mb-5 bg-body rounded mb-4 me-2 mr-5">
+          <img src="{{i.image.url}}" height="300px" class="card-img-top rounded-4 " alt="...">
+          <div class="card-body">
+            <h3 class="card-title">{{i.name}}</h3>
+            <h5 class="card-text">${{i.price}}</h5>
+            <h6 class="card-text">{{i.category}}</h6>
+          </div>
+        </div>
+        </a>
+        {% endif %}
+        {% endfor %}
+    </div>
+  </div>
+<!-- paginator  -->
+<div class="paginator mx-auto">
+
+  {% if products.paginator.num_pages > 1 %}<hr>
+    <div class="text-center">
+      {% for pg in products.paginator.page_range %}
+      <a href="?page={{pg}}" class="btn btn-dark btn-sm {% if products.number == pg %}active{% endif %}">{{pg}}</a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+</div>
+
+
+
+
+{% endblock %}

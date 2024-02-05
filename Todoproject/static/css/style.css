@@ -1,0 +1,51 @@
+.des{
+  text-align: center;
+  margin-left: 84px;
+  margin-right: 100px;
+  font-style: oblique;
+}
+.hed{
+    text-align: center;
+}
+.card-group{
+  width: 85vw;
+  margin-left: 250px;
+
+
+}
+.card-group img{
+  width: 200px;
+  margin-left: 30px;
+  margin-right: 20px;
+  margin-top: 5px;
+  
+}
+.card-group a{
+  text-decoration: none;
+  color: black;
+}
+.col2{
+  margin-top: 220px;
+}
+.col1{
+  margin-top: 40px;
+}
+.cd{
+  height: 58vh;
+  width: 22vw;
+  margin-top: 130px;
+}
+.cd img{
+  height: 58vh;
+  width: 20vw;
+}
+.conta{
+  height: 98vh
+}
+/* .btn{
+  margin-right: 600px;
+} */
+.abcd{
+  margin-left: 800px;
+  
+}
