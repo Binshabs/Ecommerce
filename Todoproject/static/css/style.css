@@ -6,24 +6,23 @@
 }
 .hed{
     text-align: center;
+    font-weight: 900;
+    font-style:oblique;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
 }
+
 .card-group{
-  width: 90vw;
-  margin-left: 250px;
-
-
+  width: 97vw;
+  margin-left:86px;
 }
-
 .card-group img{
-      width: 250px;
-      margin-left: 170px;
-      margin-right: 20px;
-      margin-top: 5px;
-      padding-right:100px ;
-      
+  width: 260px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 5px;
 }
-
-      
+  
 
 .card-group a{
   text-decoration: none;
@@ -47,9 +46,7 @@
 .conta{
   height: 98vh
 }
-/* .btn{
-  margin-right: 600px;
-} */
+
 .abcd{
   margin-left: 800px;
   
@@ -57,6 +54,10 @@
 body{
   overflow-x: hidden;
 }
-
+.hed2{
+  text-align: center;
+  font-weight: 900;
+  padding-top: 50px;
+}
   
   

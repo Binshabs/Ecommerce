@@ -163,17 +163,20 @@
         </li>
       </ul>
       <form class="d-flex" role="search" action="{% url 'searchapp:searchproduct' %}" method="GET">
-        <input class="form-control me-2" type="search"  name="q" placeholder="Search" aria-label="Search">
-       <!-- <button class="btn btn-outline-success me-2" type="submit">Search</button> -->
+        <input class="form-control me-2 mt-3 mb-3" type="search"  name="q" placeholder="Search" aria-label="Search">
+        <img class="search me-2 mb-3 mt-3" src="../static/images/shopping-cart.png"  alt="">
+       
+        
       </form>
       <div class="d-flex">
         {% if user.is_authenticated %}
 
         <span class="text-light">{{user}}</span>
-        <a href="{% url 'auth:logout' %}" class="btn btn-outline-danger" type="button">Logout</a>
+        <a href="{% url 'auth:logout' %}" class="btn btn-outline-danger " type="button">Logout</a>
         {% else %}
         <a href="{% url 'auth:login' %}" class="btn btn-outline-success me-2" type="button">Login</a>
         <a href="{% url 'auth:register' %}" class="btn btn-outline-primary me-2" type="button">Signup</a>
+        
         {% endif %}
       </div>
     </div>

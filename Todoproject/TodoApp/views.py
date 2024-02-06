@@ -13,7 +13,7 @@ def Home(request,c_slug=None):
         product_list=Product.objects.all().filter(available=True) 
         #PAGINATOR
     
-    paginator=Paginator(product_list,4)
+    paginator=Paginator(product_list,5)
     
     try:
         page=int(request.GET.get('page','1'))

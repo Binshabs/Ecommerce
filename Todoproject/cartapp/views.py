@@ -16,7 +16,7 @@ def addcart(req,id):
             cart.save()
     except Cart.DoesNotExist:
         cart=Cart.objects.create(user=user,product=product,quantity=1)
-    return redirect('cart:displaycart')
+    return redirect('cartapp:displaycart')
 
 def displaycart(req):
     user=req.session['user']
