@@ -20,5 +20,7 @@ def addcart(req,id):
 
 def displaycart(req):
     user=req.session['user']
+    
+      
     cart=Cart.objects.all().filter(user=user)
     return render(req,'cart.html',{'cart':cart})

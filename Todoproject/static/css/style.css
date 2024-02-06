@@ -8,18 +8,23 @@
     text-align: center;
 }
 .card-group{
-  width: 85vw;
+  width: 90vw;
   margin-left: 250px;
 
 
 }
+
 .card-group img{
-  width: 200px;
-  margin-left: 30px;
-  margin-right: 20px;
-  margin-top: 5px;
-  
+      width: 250px;
+      margin-left: 170px;
+      margin-right: 20px;
+      margin-top: 5px;
+      padding-right:100px ;
+      
 }
+
+      
+
 .card-group a{
   text-decoration: none;
   color: black;
@@ -49,3 +54,9 @@
   margin-left: 800px;
   
 }
+body{
+  overflow-x: hidden;
+}
+
+  
+  
