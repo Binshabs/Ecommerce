@@ -45,6 +45,9 @@ def loginUser(req):
             return redirect('auth:login')
        
     return render(req, 'loginuser.html')
+
+
 def logoutUser(req):
     auth.logout(req)
+    req.session.pop('user',None)
     return redirect('shop:home')
