@@ -29,18 +29,22 @@
             </thead>
             <tbody>
                 <tr>
-                    {% for cartitem in cart %}
+                    {% for i in cart %}
                     <th scope="row">
-                        <img class="crtimg me-3 shadow" style="width: 65px;" src="{{cartitem.product.image.url}}" alt="">{{cartitem.product}}
+                        <img class="crtimg me-3 shadow" style="width: 65px;" src="{{i.product.image.url}}" alt="">{{i.product}}
                     </th>
                     <td>
-                        <h5 class="mt-4 ms-4 shadow">{{cartitem.quantity}}</h5>
+                        <a class="btn btn-primary" href="{% url 'cartapp:removecart' i.product.id %}">-</a>
+                        <input class="mt-3 ms-3" value="{{i.quantity}}">
+                        <a class="btn btn-primary" href="{% url 'cartapp:addcart' i.product.id %}">+</a>
                     </td>
                     <td>
-                        <h5 class="mt-4 shadow">{{cartitem.product.price}}</h5>
+                        <h5 class="mt-4 shadow">{{i.product.price}}</h5>
                     </td>
-                    <td><a href="" class="btn btn-danger mt-4 shadow">Cancel</a></td>
-                    <td><button class="btn btn-success mt-4 shadow">Buy Now</button></td>
+                    <td>
+                        <a href="{% url 'cartapp:fullremove' i.product.id %}" class="btn btn-danger mt-4 shadow">Cancel</a>
+                    </td>
+                    <td><a class="btn btn-success mt-4 shadow">Buy Now</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -53,3 +57,4 @@
 </a>
 </div>
 {% endblock %}
+
