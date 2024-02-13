@@ -42,4 +42,14 @@ def fullremove(req,id):
     cart=Cart.objects.get(product=product,user=user)
     cart.delete()
     return redirect('cartapp:displaycart')
-    
+
+
+def placeorder(req):
+    user=req.session['user']
+    cart=Cart.objects.filter(user=user)
+    for cart in cart:
+        prod=Product.objects.get(id=cart.product.id)
+        prod.stock-=cart.quantity
+        prod.save()
+        cart.delete()
+    return redirect('shop:home')
